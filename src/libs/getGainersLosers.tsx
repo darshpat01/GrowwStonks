@@ -7,5 +7,7 @@ export default async function getGainersLosers() {
     throw new Error("failed to fetch users");
   }
 
-  return await res.json();
+  const data = await res.json();
+
+  return data;
 }

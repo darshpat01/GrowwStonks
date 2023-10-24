@@ -13,7 +13,9 @@ export default function TopGainerLosers({ choice, data }: Selection) {
         <div>Loading...</div>
       </>
     );
+  } else {
   }
+
   return (
     <>
       <main>
@@ -22,8 +24,8 @@ export default function TopGainerLosers({ choice, data }: Selection) {
             {data.top_gainers &&
               data.top_gainers.map((company: any) => (
                 <CompanyCard
-                  key={company.ticker}
-                  ticker={company.ticker}
+                  key={company.ticker.replace(/[+=-]/g, "")}
+                  ticker={company.ticker.replace(/[+=-]/g, "")}
                   value={company.price}
                   percent={company.change_percentage}
                   profitloss="increase"
@@ -35,8 +37,8 @@ export default function TopGainerLosers({ choice, data }: Selection) {
             {data.top_losers &&
               data.top_losers.map((company: any) => (
                 <CompanyCard
-                  key={company.ticker}
-                  ticker={company.ticker}
+                  key={company.ticker.replace(/[+=-]/g, "")}
+                  ticker={company.ticker.replace(/[+=-]/g, "")}
                   value={company.price}
                   percent={company.change_percentage}
                   profitloss="decrease"

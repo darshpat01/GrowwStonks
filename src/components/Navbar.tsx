@@ -16,7 +16,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="border rounded-lg py-2 px-4 text-black w-64"
+              className="border rounded-lg py-2 px-4 text-black w-80"
             />
           </div>
         </div>

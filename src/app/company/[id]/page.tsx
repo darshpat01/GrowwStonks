@@ -25,9 +25,11 @@ interface Company {
 }
 
 export default function Page({ params }: { params: { id: string } }) {
+  const [tickerData, setTickerData] = useState<any>([]);
   const [data, setData] = useState<Company>({
-    Name: "N/A",
-    Description: "N/A",
+    Name: "Loreum Ipsum",
+    Description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pharetra tellus. Nullam purus lorem, tincidunt sodales commodo sit amet, volutpat sit amet lacus. Ut placerat ultricies sapien sed scelerisque. Aenean dapibus maximus nulla, nec fermentum eros accumsan eu. Donec pellentesque, dui fringilla interdum molestie, neque ligula egestas diam, vel egestas diam eros sed elit. Duis eu purus massa. Vivamus vehicula metus ac justo placerat imperdiet.",
     Sector: "N/A",
     Industry: "N/A",
     Country: "N/A",
@@ -51,6 +53,14 @@ export default function Page({ params }: { params: { id: string } }) {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
+      });
+
+    fetch(
+      `https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=${process.env.ALPHAVANTAGE_API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setTickerData(data);
       });
   }, []);
 
@@ -96,6 +106,7 @@ export default function Page({ params }: { params: { id: string } }) {
           peRatio={data.PERatio}
           marketCap={data.MarketCapitalization}
         />
+        {/* load more */}
       </main>
     </>
   );

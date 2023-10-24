@@ -10,13 +10,13 @@ export default function Home() {
   const [choice, setChoice] = useState("gainers");
   const [data, setData] = useState([]);
 
-  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     try {
       getGainersLosers().then((data) => {
         setData(data);
-        dispatch(addTopGainersLosers(data));
+        // dispatch(addTopGainersLosers(data));
       });
     } catch (error) {
       console.log(error);
@@ -54,6 +54,11 @@ export default function Home() {
         </div>
         <div className="max-h-full">
           <TopGainerLosers choice={choice} data={data} />
+        </div>
+        <div className="flex justify-center mt-6">
+          <div className="px-4 py-2 bg-gray-200 dark:bg-gray-800 rounded-full font-bold cursor-pointer hover:opacity-50">
+            Load More
+          </div>
         </div>
       </div>
     </>
