@@ -3,6 +3,9 @@
 import LowHigh from "./LowHigh";
 import Tags from "./Tags";
 
+const statStyles =
+  "border border-black dark:border-white rounded-xl p-4 my-1 min-w-[17%] text-center";
+
 interface ProductDescriptionProps {
   title: string;
   desc: string;
@@ -34,11 +37,12 @@ export default function ProductDescription({
 }: ProductDescriptionProps) {
   return (
     <>
-      <div className="mt-2 border border-black dark:border-white rounded-lg">
-        <div className="px-6 py-2 border border-t-0 border-l-0 border-r-0 border-b-black dark:border-b-white">
-          <div className="text-lg font-bold">About {title}</div>
+      <div className="mt-2 py-4 dark:bg-cardColor border border-black  rounded-lg">
+        <div className="px-6 py-2 ">
+          <div className="text-xl font-bold">About {title}</div>
         </div>
         <div className="px-6 pt-2">
+          <div className="font-bold mb-2 text-lg">Description: </div>
           <div className=" font-semibold">{desc}</div>
         </div>
         <div className="flex flex-wrap px-6 py-4 items-center justify-start">
@@ -49,23 +53,23 @@ export default function ProductDescription({
           <LowHigh low={weekLow} high={weekHigh} current={currentPrice} />
         </div>
         <div className="px-6 py-4 flex flex-wrap justify-between">
-          <div>
+          <div className={statStyles}>
             <div className="font-bold">Market Cap</div>
             <div>{marketCap}</div>
           </div>
-          <div>
+          <div className={statStyles}>
             <div className="font-bold">P/E Ratio</div>
             <div>{peRatio}</div>
           </div>
-          <div>
+          <div className={statStyles}>
             <div className="font-bold">Beta</div>
             <div>{beta}</div>
           </div>
-          <div>
+          <div className={statStyles}>
             <div className="font-bold">Dividend Yield</div>
             <div>{dividendYield}</div>
           </div>
-          <div>
+          <div className={statStyles}>
             <div className="font-bold">Profit Margin</div>
             <div>{profitMargin}</div>
           </div>

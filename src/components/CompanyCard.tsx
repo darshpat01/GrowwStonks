@@ -25,7 +25,7 @@ export default function CompanyCard({
     <>
       <div
         className={
-          "px-4 py-2 border border-black dark:border-white rounded-lg " +
+          "px-4 py-2 dark:bg-cardColor border border-black dark:border-white rounded-lg " +
           hoverStyles
         }
       >
@@ -33,7 +33,7 @@ export default function CompanyCard({
           <div>{ticker}</div>
           <StatGroup>
             <Stat>
-              <StatNumber>{value}</StatNumber>
+              <StatNumber>${value}</StatNumber>
               <StatHelpText>
                 <StatArrow
                   type={profitloss as "increase" | "decrease" | undefined}

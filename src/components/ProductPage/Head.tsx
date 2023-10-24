@@ -23,7 +23,7 @@ export default function Head({
 }: HeadProps) {
   return (
     <>
-      <div className="mt-2 px-6 py-2">
+      <div className="mt-2 px-6 py-4 border border-black dark:bg-cardColor rounded-lg">
         <div className="flex flex-wrap justify-between">
           <div>
             <div className="text-2xl font-bold">{name}</div>

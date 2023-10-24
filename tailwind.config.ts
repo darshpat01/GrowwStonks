@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         growwOrange: "#ab643e",
+        cardColor: "#1c1917",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
