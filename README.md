@@ -23,7 +23,7 @@ Desktop View(Light Mode):
 <img width="1493" alt="Screenshot 2023-10-24 at 9 53 40 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/fc020a41-3b5c-4c6a-8170-fbfe82e0de3e">
 
 Mobile View(Dark Mode):
-<img width="341" alt="Screenshot 2023-10-24 at 9 53 56 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/73ebaff4-d1f8-48f2-9118-c81b051c6578">
 
+<img width="341" alt="Screenshot 2023-10-24 at 9 53 56 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/73ebaff4-d1f8-48f2-9118-c81b051c6578">
 
 <img width="339" alt="Screenshot 2023-10-24 at 9 54 09 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/fe25b167-d28a-46fc-8619-bc65aeb32684">
