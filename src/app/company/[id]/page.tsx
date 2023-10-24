@@ -73,7 +73,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <main>
+      <main className="pb-4">
         <Head
           name={data.Name}
           symbol={params.id}
