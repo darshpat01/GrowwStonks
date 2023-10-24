@@ -25,25 +25,25 @@ interface Company {
 }
 
 export default function Page({ params }: { params: { id: string } }) {
-  const [tickerData, setTickerData] = useState<any>([]);
+  const [tickerData, setTickerData] = useState<any>({});
+  const [gainersLosers, setGainersLosers] = useState<any>([]);
   const [data, setData] = useState<Company>({
-    Name: "Loreum Ipsum",
-    Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pharetra tellus. Nullam purus lorem, tincidunt sodales commodo sit amet, volutpat sit amet lacus. Ut placerat ultricies sapien sed scelerisque. Aenean dapibus maximus nulla, nec fermentum eros accumsan eu. Donec pellentesque, dui fringilla interdum molestie, neque ligula egestas diam, vel egestas diam eros sed elit. Duis eu purus massa. Vivamus vehicula metus ac justo placerat imperdiet.",
-    Sector: "N/A",
-    Industry: "N/A",
-    Country: "N/A",
-    MarketCapitalization: "N/A",
-    EBITDA: "N/A",
-    AssetType: "N/A",
-    WeekHigh52: "N/A",
-    WeekLow52: "N/A",
-    "52WeekHigh": "N/A",
-    "52WeekLow": "N/A",
-    DividendYield: "N/A",
-    ProfitMargin: "N/A",
-    Beta: "N/A",
-    PERatio: "N/A",
+    Name: "None",
+    Description: "None",
+    Sector: "None",
+    Industry: "None",
+    Country: "None",
+    MarketCapitalization: "None",
+    EBITDA: "None",
+    AssetType: "None",
+    WeekHigh52: "None",
+    WeekLow52: "None",
+    "52WeekHigh": "None",
+    "52WeekLow": "None",
+    DividendYield: "None",
+    ProfitMargin: "None",
+    Beta: "None",
+    PERatio: "None",
   });
 
   useEffect(() => {
@@ -60,9 +60,29 @@ export default function Page({ params }: { params: { id: string } }) {
     )
       .then((res) => res.json())
       .then((data) => {
-        setTickerData(data);
+        setGainersLosers(data);
+        const topGainers = data.top_gainers.map((gainer: any) => {
+          return {
+            ...gainer,
+            ticker: gainer.ticker.replace(/[+=-]/g, ""),
+          };
+        });
+        const topLosers = data.top_losers.map((loser: any) => {
+          return {
+            ...loser,
+            ticker: loser.ticker.replace(/[+=-]/g, ""),
+          };
+        });
+        const tickerDataArray = [...topGainers, ...topLosers];
+        const tickerDataFiltered = tickerDataArray.filter(
+          (item) => item.ticker === params.id
+        )[0];
+
+        setTickerData(tickerDataFiltered);
       });
   }, []);
+
+  // search for the params.id in the topGainers and topLosers
 
   // const TopGainerLosers = useAppSelector((state) => state.companyReducer.value);
 
@@ -87,17 +107,22 @@ export default function Page({ params }: { params: { id: string } }) {
         <Head
           name={data.Name}
           symbol={params.id}
-          currentPrice="10"
-          change="10"
+          currentPrice={tickerData.price}
+          change={tickerData.change_percentage}
+          profitloss={
+            parseInt(tickerData.change_amount) > 0 ? "increase" : "decrease"
+          }
         />
-        <Chart />
+
+        <Chart ticker={params.id} />
+
         <ProductDescription
           title={data.Name}
           desc={data.Description}
           sector={data.Sector}
           industry={data.Industry}
           // AssetType={data.AssetType}
-          currentPrice="10"
+          currentPrice={tickerData.price}
           weekHigh={data["52WeekHigh"]}
           weekLow={data["52WeekLow"]}
           dividendYield={data.DividendYield}

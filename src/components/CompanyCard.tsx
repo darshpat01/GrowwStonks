@@ -18,10 +18,18 @@ export default function CompanyCard({
   percent,
   profitloss,
 }: CompanyCard) {
+  // hover styles for company card in tailwind with transform and animation
+
+  const hoverStyles = "hover:scale-105 hover:shadow-lg transition transform";
   return (
     <>
-      <Link href={`/company/${ticker}`}>
-        <div className="p-2 border border-black dark:border-white rounded-lg">
+      <div
+        className={
+          "px-4 py-2 border border-black dark:border-white rounded-lg " +
+          hoverStyles
+        }
+      >
+        <Link href={`/company/${ticker}`}>
           <div>{ticker}</div>
           <StatGroup>
             <Stat>
@@ -34,8 +42,8 @@ export default function CompanyCard({
               </StatHelpText>
             </Stat>
           </StatGroup>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </>
   );
 }

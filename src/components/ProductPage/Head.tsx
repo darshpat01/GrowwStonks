@@ -1,8 +1,17 @@
+import {
+  Stat,
+  StatArrow,
+  StatGroup,
+  StatHelpText,
+  StatNumber,
+} from "@chakra-ui/react";
+
 interface HeadProps {
   name: string;
   symbol: string;
   currentPrice: string;
   change: string;
+  profitloss?: string;
 }
 
 export default function Head({
@@ -10,6 +19,7 @@ export default function Head({
   symbol,
   currentPrice,
   change,
+  profitloss,
 }: HeadProps) {
   return (
     <>
@@ -20,8 +30,17 @@ export default function Head({
             <div className="font-semibold">{symbol}</div>
           </div>
           <div className="text-right">
-            <div className="text-lg font-bold">${currentPrice}</div>
-            <div>{change}</div>
+            <StatGroup>
+              <Stat>
+                <StatNumber>{currentPrice}</StatNumber>
+                <StatHelpText>
+                  <StatArrow
+                    type={profitloss as "increase" | "decrease" | undefined}
+                  />
+                  {change}
+                </StatHelpText>
+              </Stat>
+            </StatGroup>
           </div>
         </div>
       </div>
