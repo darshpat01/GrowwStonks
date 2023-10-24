@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Groww Frontend Assignment
 
-## Getting Started
+Features:
+* Creative UI
+* NextJs Server Side rendering implemented.
+* Follow a standard well defined folder structure.
+* Responsive UI
+* Used Ant Design Charts for line graph
+* Cached API responses
+* Light and Dark Mode Themes
+* Deployed on vercel
 
-First, run the development server:
+Snapshots:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Desktop View(Dark Mode): 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img width="1497" alt="Screenshot 2023-10-24 at 9 52 39 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/bcc59adf-9539-450d-ae18-eabad854457e">
+<img width="1494" alt="Screenshot 2023-10-24 at 9 53 08 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/829a8d14-8c72-41b3-97f2-850e16d4bdb9">
+<img width="1492" alt="Screenshot 2023-10-24 at 9 53 18 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/df8a6a32-ab78-41cc-881e-7978a1401a4b">
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Desktop View(Light Mode):
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<img width="1493" alt="Screenshot 2023-10-24 at 9 53 40 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/fc020a41-3b5c-4c6a-8170-fbfe82e0de3e">
 
-## Learn More
+Mobile View(Dark Mode):
+<img width="341" alt="Screenshot 2023-10-24 at 9 53 56 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/73ebaff4-d1f8-48f2-9118-c81b051c6578">
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img width="339" alt="Screenshot 2023-10-24 at 9 54 09 PM" src="https://github.com/darshpat01/GrowwStonks/assets/68650149/fe25b167-d28a-46fc-8619-bc65aeb32684">
