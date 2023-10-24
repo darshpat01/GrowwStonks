@@ -38,12 +38,12 @@ export default function ProductDescription({
         <div className="px-6 py-2 border border-t-0 border-l-0 border-r-0 border-b-black dark:border-b-white">
           <div className="text-lg font-bold">About {title}</div>
         </div>
-        <div className="px-6 py-2">
+        <div className="px-6 pt-2">
           <div className=" font-semibold">{desc}</div>
         </div>
         <div className="flex flex-wrap px-6 py-4 items-center justify-start">
-          <Tags tagType="Industry" tag={industry} />
-          <Tags tagType="Sector" tag={sector} />
+          <Tags tagType="INDUSTRY" tag={industry} />
+          <Tags tagType="SECTOR" tag={sector} />
         </div>
         <div className="px-6 py-4">
           <LowHigh low={weekLow} high={weekHigh} current={currentPrice} />
