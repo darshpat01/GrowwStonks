@@ -65,7 +65,7 @@ export default function ProductDescription({
             <div className="font-bold">Dividend Yield</div>
             <div>{dividendYield}</div>
           </div>
-          <div className="px-8">
+          <div>
             <div className="font-bold">Profit Margin</div>
             <div>{profitMargin}</div>
           </div>
